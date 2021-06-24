@@ -1,0 +1,2 @@
+# NFTLinkChecker
+NFTをmintする前の確認をするためのツールです
