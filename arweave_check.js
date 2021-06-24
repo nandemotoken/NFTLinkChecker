@@ -10,9 +10,11 @@ footing = "</body></html>"
 
 fs.readdir('input' , function(err , files){
 	if(err) throw err;
-	for (f of files)
+	//console.log(files)
+	for (f of files){
 	//console.log(f)
 	var url = fs.readFileSync("input/"+f , 'utf-8');
+	console.log(f)
 	//console.log(text)
 	exec("wget -O - " + url , (err , stdout , stderr) =>{
 	if (err){
@@ -28,7 +30,7 @@ fs.readdir('input' , function(err , files){
 		})
 	}
 	)
-	
+	}
 	})
 
 
