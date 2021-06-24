@@ -22,7 +22,7 @@ fs.readdir('input' , function(err , files){
 		console.log(`${stdout}`)
 		json = JSON.parse(stdout)
 		//console.log(json.name)
-		data=heading+"<h1>"+json.name+'</h1><img src="'+json.image+'"></img>'+footing
+		data=heading+"<h1>"+json.name+'</h1><a href="'+json.external_url+'">externalURL</a><br><img src="'+json.image+'"></img>'+"<br><p>"+ json.description +"</p>" + '<video controls><source src="'+json.animation_url+'" type="video/mp4"></video>' + footing
 		fs.writeFile("output/"+f+".html" , data, (err)=>{
 			
 		})
