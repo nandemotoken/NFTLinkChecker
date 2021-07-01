@@ -21,7 +21,7 @@ for f in files:
     outurl=open(outputdir + f + ".html" , 'w')
     jsondata = json.loads(text)
     print(jsondata)
-    writedata = heading+"<h1>"+ str(jsondata.get("name"))+'</h1><a href="'+str(jsondata.get("external_url"))+'">externalURL</a><br><img src="'+str(jsondata.get("image"))+'"></img>'+"<br><p>"+ str(jsondata.get("description")) +"</p>" + '<video controls><source src="'+str(jsondata.get("animation_url"))+'" type="video/mp4"></video>' + footing
+    writedata = heading+"<h1>"+ str(jsondata.get("name"))+'</h1><a href="'+str(jsondata.get("external_url"))+'">externalURL</a><br><img src="'+str(jsondata.get("image"))+'" style="width:50%"></img>'+"<br><p>"+ str(jsondata.get("description")).replace("""\n\n""","<br>") +"</p>" + '<video controls><source src="'+str(jsondata.get("animation_url"))+'" type="video/mp4" style="width:50%" ></video>' + footing
     outurl.write(writedata)
 
 
